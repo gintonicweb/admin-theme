@@ -17,7 +17,6 @@
     "src/.*",
     "composer/.json",
     "node_modules",
-    "webroot",
     "tests"
   ],
   "devDependencies": {
