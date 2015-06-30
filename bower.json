@@ -8,15 +8,19 @@
   "description": "GintonicCMS theme based on AdminLTE",
   "main": [],
   "dependencies": {
-      "bootstrap" : "*"
+    "bootstrap": "*"
   },
   "license": "MIT",
   "ignore": [
-    "**/.*",
+    "*.*",
+    "config",
+    "src/.*",
+    "composer/.json",
     "node_modules",
-    "bower_components",
-    "webroot/lib",
-    "test",
+    "webroot",
     "tests"
-  ]
+  ],
+  "devDependencies": {
+    "bootstrap": "*"
+  }
 }

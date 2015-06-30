@@ -1,8 +1,13 @@
 requirejs.config({
-    baseUrl: '/',
-    urlArgs: "bust=0",
     paths: {
+        admin_lte: '/admin_lte/app/',
+        bootstrap: 'lib/bootstrap/dist/js/bootstrap',
+        jquery: 'lib/jquery/dist/jquery'
     },
     shim: {
-    }
+
+    },
+    packages: [
+
+    ]
 });
