@@ -6,9 +6,9 @@
     "Phillaf <phil.laf@gmail.com>"
   ],
   "description": "GintonicCMS theme based on AdminLTE",
-  "main": {
+  "main": [
       "webroot/main.js"
-  },
+  ],
   "dependencies": {
       "bootstrap" : "*"
   },
