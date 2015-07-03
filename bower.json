@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "homepage": "https://github.com/gintonicweb/AdminLTE",
   "authors": [
-    "Phillaf <phil.laf@gmail.com>"
+    "Philippe Lafrance <phil.laf@gmail.com>"
   ],
   "description": "GintonicCMS theme based on AdminLTE",
   "main": ["webroot"],
