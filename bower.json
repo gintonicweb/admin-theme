@@ -7,9 +7,6 @@
   ],
   "description": "GintonicCMS theme based on AdminLTE",
   "main": ["webroot"],
-  "dependencies": {
-    "bootstrap": "*"
-  },
   "license": "MIT",
   "ignore": [
     "**/.*",
