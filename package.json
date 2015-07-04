@@ -1,4 +1,10 @@
 {
+  "name": "admin-theme",
+  "version": "0.0.0",
+  "description": "AdminLte theme for GintonicCMS",
+  "homepage": "http://gintoniccms.com",
+  "author": "Philippe Lafrance <phil.laf@gmail.com>",
+  "license": "MIT",
   "engines": {
     "node": ">= 0.10.0"
   },
