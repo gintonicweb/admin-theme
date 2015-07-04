@@ -16,7 +16,7 @@ module.exports = function(grunt) {
             transitive: true
         },
         target: {
-            rjsConfig: 'assets/js/adminlte-theme.js'
+            rjsConfig: 'assets/js/admin-theme.js'
         }
     },
     requirejs: {
@@ -26,7 +26,7 @@ module.exports = function(grunt) {
           baseUrl:"./",
           dir:"webroot/js",
           modules:[{
-            name: "adminlte-theme",
+            name: "admin-theme",
           }],
           noBuildTxt: true
         }
