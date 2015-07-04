@@ -1,8 +1,8 @@
 {
     "name": "gintonicweb/admin-theme",
     "description": "AdminLTE theme for GintonicCMS",
+    "type": "cakephp-plugin",
     "homepage": "http://gintoniccms.com",
-    "type": "project",
     "license": "MIT",
     "require": {
         "php": ">=5.4.16",
