@@ -16,7 +16,7 @@ module.exports = function(grunt) {
             transitive: true
         },
         target: {
-            rjsConfig: 'assets/js/admin-theme.js'
+            rjsConfig: 'assets/js/main.js'
         }
     },
     requirejs: {
@@ -26,7 +26,7 @@ module.exports = function(grunt) {
           baseUrl:"./",
           dir:"webroot/js",
           modules:[{
-            name: "admin-theme",
+            name: "main",
           }],
           noBuildTxt: true
         }
@@ -35,7 +35,20 @@ module.exports = function(grunt) {
     copy: {
       main: {
         files: [
-          {expand: true, cwd: './assets/vendor/', src: ['**'], dest: 'webroot/vendor/'},
+          {
+            expand: true,
+            cwd: './assets/vendor/',
+            src: ['**'],
+            dest: 'webroot/vendor/'
+          },
+          {
+            expand: true,
+            cwd: './assets/vendor/',
+            src: ['**/fonts/**'],
+            dest: 'webroot/fonts/',
+            flatten: true,
+            filter: "isFile"
+          },
         ],
       },
     },
