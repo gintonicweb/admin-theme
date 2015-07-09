@@ -21,6 +21,7 @@ $fields = collection($fields)
     ->take(7);
 %>
 <?php $this->Html->addCrumb('<%= $pluralHumanName %>', ['action' => 'index']) ?>
+<?php $this->Html->addCrumb('index') ?>
 <div class="row">
     <div class="col-md-12">
         <div class="box">
@@ -79,17 +80,17 @@ $fields = collection($fields)
                         <td>
                             <div class="pull-right">
                                 <?= $this->Html->link(
-                                    '<button class="btn btn-primary"><i class="fa fa-eye"></i></button>',
+                                    '<button class="btn btn-default"><i class="fa fa-eye"></i></button>',
                                     ['action' => 'view', <%= $pk %>],
                                     ['escape' => false]
                                 )?>
                                 <?= $this->Html->link(
-                                    '<button class="btn btn-primary"><i class="fa fa-pencil"></i></button>',
+                                    '<button class="btn btn-default"><i class="fa fa-pencil"></i></button>',
                                     ['action' => 'edit', <%= $pk %>],
                                     ['escape' => false]
                                 )?>
                                 <?= $this->Form->postLink(
-                                    '<button class="btn btn-primary"><i class="fa fa-times"></i></button>',
+                                    '<button class="btn btn-default"><i class="fa fa-times"></i></button>',
                                     ['action' => 'delete', <%= $pk %>],
                                     [
                                         'escape' => false,
@@ -120,6 +121,11 @@ $fields = collection($fields)
                     $done = [];
                     $typeCount = count($associations);
                     $i=0;
+                    if(!$typeCount):
+                %>
+                    <li><a href="#"><?= __('No associated action') ?></a></li>
+                <%
+                    endif;
                     foreach ($associations as $type => $data):
                         foreach ($data as $alias => $details):
                             if (!empty($details['navLink']) && $details['controller'] !== $this->name && !in_array($details['controller'], $done)):
