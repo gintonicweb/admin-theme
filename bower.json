@@ -9,12 +9,11 @@
   "main": ["webroot"],
   "license": "MIT",
   "ignore": [
-    "**/.*",
-    "config",
-    "src/.*",
-    "composer/.json",
-    "node_modules",
-    "tests"
+    "*",
+    "!assets/",
+    "!assets/*",
+    "!webroot/",
+    "!webroot/*"
   ],
   "dependencies": {
     "bootstrap": "~3.3.4",
