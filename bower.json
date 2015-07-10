@@ -11,9 +11,9 @@
   "ignore": [
     "*",
     "!assets/",
-    "!assets/*",
+    "!assets/**",
     "!webroot/",
-    "!webroot/*"
+    "!webroot/**"
   ],
   "dependencies": {
     "bootstrap": "~3.3.4",
