@@ -21,6 +21,7 @@ $fields = collection($fields)
     ->take(7);
 %>
 <?php $this->Html->addCrumb('<%= $pluralHumanName %>', ['action' => 'index']) ?>
+<?php $this->Html->addCrumb('index') ?>
 <div class="row">
     <div class="col-md-12">
         <div class="box">
@@ -79,17 +80,17 @@ $fields = collection($fields)
                         <td>
                             <div class="pull-right">
                                 <?= $this->Html->link(
-                                    '<button class="btn btn-primary"><i class="fa fa-eye"></i></button>',
+                                    '<i class="fa fa-eye"></i>',
                                     ['action' => 'view', <%= $pk %>],
-                                    ['escape' => false]
+                                    ['escape' => false, 'class' => 'btn btn-default']
                                 )?>
                                 <?= $this->Html->link(
-                                    '<button class="btn btn-primary"><i class="fa fa-pencil"></i></button>',
+                                    '<i class="fa fa-pencil"></i>',
                                     ['action' => 'edit', <%= $pk %>],
-                                    ['escape' => false]
+                                    ['escape' => false, 'class' => 'btn btn-default']
                                 )?>
                                 <?= $this->Form->postLink(
-                                    '<button class="btn btn-primary"><i class="fa fa-times"></i></button>',
+                                    '<button class="btn btn-default"><i class="fa fa-times"></i></button>',
                                     ['action' => 'delete', <%= $pk %>],
                                     [
                                         'escape' => false,
@@ -118,8 +119,11 @@ $fields = collection($fields)
                     <ul class="dropdown-menu" role="menu">
                 <%
                     $done = [];
-                    $typeCount = count($associations);
-                    $i=0;
+                    if(empty($associations)):
+                %>
+                    <li><a href="#"><?= __('No associated action') ?></a></li>
+                <%
+                    endif;
                     foreach ($associations as $type => $data):
                         foreach ($data as $alias => $details):
                             if (!empty($details['navLink']) && $details['controller'] !== $this->name && !in_array($details['controller'], $done)):
@@ -130,11 +134,6 @@ $fields = collection($fields)
                                 $done[] = $details['controller'];
                             endif;
                         endforeach;
-                        if (++$i < $typeCount) :
-                %>
-                        <li class="divider"></li>
-                <%
-                        endif;
                     endforeach;
     %>
                     </ul>
