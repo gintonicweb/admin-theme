@@ -21,7 +21,7 @@ $fields = collection($fields)
     ->take(7);
 %>
 <?php $this->Html->addCrumb('<%= $pluralHumanName %>', ['action' => 'index']) ?>
-<?php $this->Html->addCrumb('index') ?>
+<?php $this->Html->addCrumb('Index') ?>
 <div class="row">
     <div class="col-md-12">
         <div class="box">
