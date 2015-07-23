@@ -52,7 +52,7 @@ $groupedFields += ['number' => [], 'string' => [], 'boolean' => [], 'date' => []
 $pk = "\$$singularVar->{$primaryKey[0]}";
 %>
 <?php $this->Html->addCrumb('<%= $pluralHumanName %>', ['action' => 'index']) ?>
-<?php $this->Html->addCrumb('view') ?>
+<?php $this->Html->addCrumb('View') ?>
 
 <div class="row">
     <div class="col-md-12">
