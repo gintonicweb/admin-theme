@@ -17,7 +17,7 @@
   ],
   "dependencies": {
     "bootstrap": "~3.3.4",
-    "fontawesome": "~4.3.0",
+    "fontawesome": "~4.4.0",
     "admin-lte": "~2.1.1",
     "ionicons": "~2.0.1"
   }
