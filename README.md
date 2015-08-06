@@ -1,4 +1,7 @@
-# AdminLTE
-AdminLTE theme for GintonicCMS
+# Admin-Theme
 
-Early stub.
+Bake templates for the AdminLTE theme of GintonicCMS
+
+see gintonicweb/gintonic-cms
+
+
