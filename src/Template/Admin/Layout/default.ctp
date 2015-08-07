@@ -5,7 +5,7 @@
     <title><?= $this->fetch('title') ?></title>
     <?= $this->Html->meta('icon') ?>
     <?= $this->fetch('meta') ?>
-    <?= $this->Html->css('GintonicCMS.admin') ?>
+    <?= $this->Html->css('AdminTheme.admin') ?>
 
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
 
@@ -19,17 +19,17 @@
   <body class="skin-blue sidebar-mini">
     <div class="wrapper">
 
-      <?= $this->element('GintonicCMS.navbar') ?>
-      <?= $this->element('GintonicCMS.sidebar') ?>
+      <?= $this->element('navbar') ?>
+      <?= $this->element('sidebar') ?>
       <div class="content-wrapper">
-        <?= $this->element('GintonicCMS.heading') ?>
+        <?= $this->element('heading') ?>
         <section class="content">
             <?php echo $this->Flash->render(); ?>
             <?= $this->fetch('content') ?>
         </section>
       </div>
-      <?= $this->element('GintonicCMS.footer') ?>
-      <?= $this->element('GintonicCMS.rightbar') ?>
+      <?= $this->element('footer') ?>
+      <?= $this->element('rightbar') ?>
     </div>
 
     <?= $this->Require->req('admin/dist/js/app'); ?>
