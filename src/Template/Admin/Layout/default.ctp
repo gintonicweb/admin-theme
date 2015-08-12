@@ -32,10 +32,10 @@
       <?= $this->element('rightbar') ?>
     </div>
 
-    <?= $this->Require->req('admin/dist/js/app'); ?>
-    <?= $this->Require->req('admin/plugins/fastclick/fastclick'); ?>
-    <?= $this->Require->req('jquery'); ?>
-    <?= $this->Require->req('bootstrap'); ?>
-    <?= $this->Require->load(); ?>
+    <?= $this->Require->module('admin/dist/js/app'); ?>
+    <?= $this->Require->module('admin/plugins/fastclick/fastclick'); ?>
+    <?= $this->Require->module('jquery'); ?>
+    <?= $this->Require->module('bootstrap'); ?>
+    <?= $this->Require->load('Requirejs.require', 'AdminTheme.main'); ?>
   </body>
 </html>

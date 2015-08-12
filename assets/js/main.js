@@ -8,6 +8,9 @@ require.config({
     ionicons: "../vendor/ionicons/fonts/*"
   },
   shim: {
+    bootstrap: [
+      "jquery"
+    ],
     "admin/dist/js/app": [
       "jquery"
     ],
