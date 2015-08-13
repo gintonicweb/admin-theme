@@ -1,10 +1,6 @@
 GintonicCMS
 
-/config/email.php
-/config/datasources.php
-/config/gintonic.php
 /assets/vendor/*
-/webroot/vendor/*
 /node_modules/*
 
 CakePHP 3

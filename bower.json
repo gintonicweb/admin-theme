@@ -16,8 +16,9 @@
     "!webroot/**"
   ],
   "dependencies": {
-    "bootstrap": "~3.3.4",
-    "fontawesome": "~4.4.0",
+    "jquery": "*",
+    "bootstrap": "*",
+    "fontawesome": "*",
     "admin-lte": "~2.1.1",
     "ionicons": "~2.0.1"
   }
