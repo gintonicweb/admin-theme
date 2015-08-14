@@ -1,5 +1,4 @@
 <?php
-// Extend original to fix UL attributes
 
 namespace AdminTheme\Menu\Renderer;
 
