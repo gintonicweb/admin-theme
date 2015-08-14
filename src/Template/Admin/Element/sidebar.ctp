@@ -1,4 +1,3 @@
-<?php $this->loadHelper('GintonicCMS.Menu')?>
 <aside class="main-sidebar">
     <section class="sidebar">
         <div class="user-panel">
@@ -19,16 +18,38 @@
                 </a>
             </div>
         </div>
-        <ul class="sidebar-menu">
-            <li>
-                <a href="#">
-                    <i class="fa fa-bar-chart"></i>
-                    <span>Statistics</span>
-                </a>
-            </li>
-            <?= $this->Menu->adminTree('Users', ['Index', 'Add', 'Permissions'], 'fa fa-users') ?>
-            <?= $this->fetch('sidebar') ?>
-        </ul>
+
+        <?php
+            $menu = $this->Menu->get('sidebar')
+                ->setChildrenAttribute('class', 'sidebar-menu');
+
+            $menu->addChild('Statistics', ['uri' => ['controller' => 'Statistics']])
+                ->setTemplateLabel('sidebar', ['left' => 'fa fa-bar-chart'])
+                ->setAttribute('class', 'treeview')
+                ->setChildrenAttribute('class', 'treeview-menu');
+
+            $menu->addChild('Users', ['uri' => ['controller' => 'Users']])
+                ->setTemplateLabel('sidebar', ['left' => 'fa fa-user'])
+                ->setAttribute('class', 'treeview')
+                ->setChildrenAttribute('class', 'treeview-menu');
+
+            $menu['Users']
+                ->addChild('index', ['uri' => ['controller' => 'Users', 'action' => 'index']])
+                ->setTemplateLabel('sidebar');
+
+            $menu['Users']
+                ->addChild('add', ['uri' => ['controller' => 'Users', 'action' => 'add']])
+                ->setTemplateLabel('sidebar');
+
+            $menu['Users']
+                ->addChild('permissions', ['uri' => ['controller' => 'Users', 'action' => 'permissons']])
+                ->setTemplateLabel('sidebar');
+
+            echo $this->Menu->render('sidebar', [
+                'renderer' => '\AdminTheme\Menu\Renderer\ListRenderer'
+            ]);
+        ?>
+
     </section>
 </aside>
 

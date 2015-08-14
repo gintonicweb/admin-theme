@@ -20,7 +20,7 @@
     <div class="wrapper">
 
       <?= $this->element('navbar') ?>
-      <?= $this->element('sidebar') ?>
+      <?php echo $this->element('sidebar') ?>
       <div class="content-wrapper">
         <?= $this->element('heading') ?>
         <section class="content">
