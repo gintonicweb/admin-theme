@@ -20,6 +20,7 @@
         </div>
 
         <?php
+            $this->loadHelper('AdminTheme.Menu');
             $menu = $this->Menu->get('sidebar')
                 ->setChildrenAttribute('class', 'sidebar-menu');
 
