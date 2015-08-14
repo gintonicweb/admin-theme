@@ -59,7 +59,6 @@ foreach ($actions as $name => $config) {
             continue;
         }
         $config = $links[$action];
-        $btnClass = isset($btnClass) ? $btnClass : 'btn btn-default';
         $config['options']['class'] = $btnClass;
         $config['options']['escape'] = false;
 
