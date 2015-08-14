@@ -30,16 +30,23 @@ class ListRenderer extends KnpListRenderer
 
     protected function renderLabel(ItemInterface $item, array $options)
     {
-        if (!is_null($item->template)) {
-            return $this->{$item->template . 'Template'}($item, $options);
+        $template = $item->getExtra('template');
+        if ($template) {
+
+            $templateName = $template;
+            $templateOptions = [];
+            if (is_array($template)) {
+                $templateName = key($template);
+                $templateOptions = $template[$templateName];
+            }
+
+            return $this->{$templateName . 'Template'}($item, $options, $templateOptions);
         }
         return $item->getLabel();
     }
 
-    protected function sidebarTemplate(ItemInterface $item, array $options)
+    protected function sidebarTemplate(ItemInterface $item, array $options, $templateOptions)
     {
-        $templateOptions = $item->templateOptions;
-
         if (!array_key_exists('left', $templateOptions)) {
             $templateOptions['left'] = 'fa fa-angle-right';
         }
@@ -51,7 +58,6 @@ class ListRenderer extends KnpListRenderer
         if (!array_key_exists('right', $templateOptions) && $item->hasChildren()) {
             $templateOptions['right'] = 'fa fa-angle-left';
         }
-
 
         return $this->templater()->format('sidebar', $templateOptions);
     }

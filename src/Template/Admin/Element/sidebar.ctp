@@ -20,31 +20,31 @@
         </div>
 
         <?php
-            $this->loadHelper('AdminTheme.Menu');
+            $this->loadHelper('Gourmet/KnpMenu.Menu');
             $menu = $this->Menu->get('sidebar')
                 ->setChildrenAttribute('class', 'sidebar-menu');
 
             $menu->addChild('Statistics', ['uri' => ['controller' => 'Statistics']])
-                ->setTemplateLabel('sidebar', ['left' => 'fa fa-bar-chart'])
+                ->setExtra('template', ['sidebar' => ['left' => 'fa fa-bar-chart']])
                 ->setAttribute('class', 'treeview')
                 ->setChildrenAttribute('class', 'treeview-menu');
 
             $menu->addChild('Users', ['uri' => ['controller' => 'Users']])
-                ->setTemplateLabel('sidebar', ['left' => 'fa fa-user'])
+                ->setExtra('template', ['sidebar' => ['left' => 'fa fa-user']])
                 ->setAttribute('class', 'treeview')
                 ->setChildrenAttribute('class', 'treeview-menu');
 
             $menu['Users']
                 ->addChild('index', ['uri' => ['controller' => 'Users', 'action' => 'index']])
-                ->setTemplateLabel('sidebar');
+                ->setExtra('template', 'sidebar');
 
             $menu['Users']
                 ->addChild('add', ['uri' => ['controller' => 'Users', 'action' => 'add']])
-                ->setTemplateLabel('sidebar');
+                ->setExtra('template', 'sidebar');
 
             $menu['Users']
                 ->addChild('permissions', ['uri' => ['controller' => 'Users', 'action' => 'permissons']])
-                ->setTemplateLabel('sidebar');
+                ->setExtra('template', 'sidebar');
 
             echo $this->Menu->render('sidebar', [
                 'renderer' => '\AdminTheme\Menu\Renderer\ListRenderer'
