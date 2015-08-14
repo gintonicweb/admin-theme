@@ -4,18 +4,16 @@
             <div class="pull-left image">
                 <img src="/gintonic_c_m_s/img/avatar.jpg" class="img-circle" alt="User Image" />
             </div>
-            <div class="pull-left info">
+            <div class="info">
                 <p>
                     <?= $this->request->session()->read('Auth.User.first') ?>
                     <?= $this->request->session()->read('Auth.User.last') ?>
                 </p>
-                <a href="#">
-                    <?= $this->Html->link(
-                        '<i class="fa fa-angle-left"></i> Back to website',
-                        ['controller'=>'users', 'action' => 'view', 'prefix' => false],
-                        ['escape' => false]
-                    ) ?>
-                </a>
+                <?= $this->Html->link(
+                    '<i class="fa fa-angle-left"></i> Back to website',
+                    ['controller'=>'users', 'action' => 'view', 'prefix' => false],
+                    ['escape' => false]
+                ) ?>
             </div>
         </div>
 
