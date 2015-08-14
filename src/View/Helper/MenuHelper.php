@@ -32,7 +32,7 @@ class MenuHelper extends Helper
         }
     }
 
-    public function get($name)
+    public function get()
     {
         return $this->Knp->render('sidebar', [
             'renderer' => '\AdminTheme\Menu\Renderer\ListRenderer'

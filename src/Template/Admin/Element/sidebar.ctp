@@ -23,7 +23,7 @@
             $this->loadHelper('AdminTheme.Menu');
             $this->Menu->add('Statistics', 'fa fa-bar-chart');
             $this->Menu->add('Users', 'fa fa-users', ['index', 'add', 'permissions']);
-            echo $this->Menu->get('sidebar');
+            echo $this->Menu->get();
         ?>
 
     </section>
