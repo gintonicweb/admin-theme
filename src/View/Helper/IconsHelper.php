@@ -9,9 +9,11 @@ class IconsHelper extends Helper
 {
     protected $_defaultConfig = [
         'substitutes' => [
+            'add' => 'fa fa-plus',
             'edit' => 'fa fa-pencil',
+            'index' => 'fa fa-list-ul',
             'view' => 'fa fa-eye',
-            'delete' => 'fa fa-times',
+            'delete' => 'fa fa-trash',
         ]
     ];
 

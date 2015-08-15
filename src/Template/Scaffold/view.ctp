@@ -7,12 +7,8 @@ $assocMap = isset($associations['manyToOne']) ?
 ?>
 <?= $this->fetch('before_view'); ?>
 <div class="<?= $this->CrudView->getCssClasses(); ?>">
-    <div class="box">
-        <div class="box box-primary">
-            <div class="box-header">
-                <?= $this->element('action-header') ?>
-            </div>
-        </div>
+    <div class="box box-primary">
+        <?= $this->element('action-header', ['iconify' => true]) ?>
         <table class="table">
             <?php
             $this->CrudView->setContext(${$viewVar});
@@ -32,6 +28,17 @@ $assocMap = isset($associations['manyToOne']) ?
             }
             ?>
         </table>
+        <div class="box-footer clearfix">
+            <div class="form-group">
+                <div class="pull-left">
+                    <?php
+                    if (!in_array('back', $extraButtonsBlacklist)) {
+                        echo $this->Html->link(__d('crud', 'Back'), ['action' => 'index'], ['class' => 'btn btn-default', 'role' => 'button']) . ' ';
+                    }
+                    ?>
+                </div>
+            </div>
+        </div>
         <?= $this->element('view/related'); ?>
     </div>
 </div>

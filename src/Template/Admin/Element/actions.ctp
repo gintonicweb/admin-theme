@@ -1,6 +1,10 @@
 <?php
-$this->loadHelper('AdminTheme.Icons');
-$actions = $this->Icons->actions($actions);
+
+if (isset($iconify) && $iconify) {
+    $this->loadHelper('AdminTheme.Icons');
+    $actions = $this->Icons->actions($actions);
+}
+
 $links = [];
 foreach ($actions as $name => $config) {
     $config += ['method' => 'GET'];
@@ -51,24 +55,22 @@ foreach ($actions as $name => $config) {
 }
 ?>
 
-<div class="pull-right">
-    <?php
-    // render primary actions at first
-    foreach ($actionGroups['primary'] as $action) {
-        if (!isset($links[$action])) {
-            continue;
-        }
-        $config = $links[$action];
-        $btnClass = isset($btnClass) ? $btnClass : 'btn btn-default';
-        $config['options']['class'] = $btnClass;
-        $config['options']['escape'] = false;
-
-        echo $this->element('action-button', ['config' => $config]);
-        echo ' ';
+<?php
+// render primary actions at first
+foreach ($actionGroups['primary'] as $action) {
+    if (!isset($links[$action])) {
+        continue;
     }
-    unset($actionGroups['primary']);
+    $config = $links[$action];
+    $btnClass = isset($btnClass) ? $btnClass : 'btn btn-default';
+    $config['options']['class'] = $btnClass;
+    $config['options']['escape'] = false;
 
-    // render grouped actions
-    echo $this->element('action-groups', ['groups' => $actionGroups, 'links' => $links]);
-    ?>
-</div>
+    echo $this->element('action-button', ['config' => $config]);
+    echo ' ';
+}
+unset($actionGroups['primary']);
+
+// render grouped actions
+echo $this->element('action-groups', ['groups' => $actionGroups, 'links' => $links]);
+?>
