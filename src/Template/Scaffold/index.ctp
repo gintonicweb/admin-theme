@@ -42,7 +42,6 @@
                             <tr>
                                 <?= $this->element('index/bulk_actions/record', compact('bulkActions', 'primaryKey', 'singularVar')); ?>
                                 <?= $this->element('index/table_columns', compact('singularVar')); ?>
-                    
                                 <?php if ($actionsExist): ?>
                                     <td class="actions"><?= $this->element('actions', [
                                         'singularVar' => $singularVar,
@@ -56,13 +55,6 @@
                 <div class="box-footer clearfix">
                     <div class="btn-group pull-left">
                         <?= $this->element('index/action-footer') ?>
-                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                            <span class="caret"></span>
-                            <span class="sr-only">Toggle Dropdown</span>
-                        </button>
-                        <ul class="dropdown-menu" role="menu">
-                            <li><a href="#"><?= __('No associated action') ?></a></li>
-                        </ul>
                     </div>
                     <div class="pull-right">
                         <ul class="pagination pagination no-margin">

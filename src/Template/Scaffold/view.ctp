@@ -7,25 +7,31 @@ $assocMap = isset($associations['manyToOne']) ?
 ?>
 <?= $this->fetch('before_view'); ?>
 <div class="<?= $this->CrudView->getCssClasses(); ?>">
-    <?= $this->element('action-header') ?>
-    <table class="table">
-        <?php
-        $this->CrudView->setContext(${$viewVar});
-        foreach ($fields as $field => $options) {
-            if (in_array($field, array($primaryKey))) {
-                continue;
+    <div class="box">
+        <div class="box box-primary">
+            <div class="box-header">
+                <?= $this->element('action-header') ?>
+            </div>
+        </div>
+        <table class="table">
+            <?php
+            $this->CrudView->setContext(${$viewVar});
+            foreach ($fields as $field => $options) {
+                if (in_array($field, array($primaryKey))) {
+                    continue;
+                }
+        
+                echo '<tr>';
+        
+                printf("<th>%s</th>", array_key_exists($field, $assocMap) ?
+                    Inflector::singularize(Inflector::humanize(Inflector::underscore($assocMap[$field]))) :
+                    Inflector::humanize($field));
+                printf("<td>%s</td>", $this->CrudView->process($field, ${$viewVar}, $options) ?: "&nbsp;");
+        
+                echo '</tr>';
             }
-
-            echo '<tr>';
-
-            printf("<th>%s</th>", array_key_exists($field, $assocMap) ?
-                Inflector::singularize(Inflector::humanize(Inflector::underscore($assocMap[$field]))) :
-                Inflector::humanize($field));
-            printf("<td>%s</td>", $this->CrudView->process($field, ${$viewVar}, $options) ?: "&nbsp;");
-
-            echo '</tr>';
-        }
-        ?>
-    </table>
-    <?= $this->element('view/related'); ?>
+            ?>
+        </table>
+        <?= $this->element('view/related'); ?>
+    </div>
 </div>
