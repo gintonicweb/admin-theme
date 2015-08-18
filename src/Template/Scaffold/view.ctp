@@ -39,6 +39,6 @@ $assocMap = isset($associations['manyToOne']) ?
                 </div>
             </div>
         </div>
-        <?= $this->element('view/related'); ?>
     </div>
 </div>
+<?= $this->element('view/related'); ?>
