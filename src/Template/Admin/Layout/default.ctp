@@ -26,6 +26,7 @@
         <section class="content">
             <?php echo $this->Flash->render(); ?>
             <?= $this->fetch('content') ?>
+            <?= $this->fetch('action_link_forms'); ?>
         </section>
       </div>
       <?= $this->element('footer') ?>

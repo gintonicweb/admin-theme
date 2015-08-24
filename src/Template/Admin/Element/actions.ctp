@@ -46,6 +46,15 @@ foreach ($actions as $name => $config) {
         $url[] = $singularVar->{$primaryKey};
     }
 
+    if ($config['method'] !== 'GET') {
+        $links[$name] = $this->Form->postLink(
+            $config['title'],
+            $url,
+            $linkOptions + ['class'=>'btn btn-default', 'escape' => false]
+        );
+        continue;
+    }
+
     $links[$name] = [
         'title' => $config['title'],
         'url' => $url,
@@ -62,6 +71,10 @@ foreach ($actionGroups['primary'] as $action) {
         continue;
     }
     $config = $links[$action];
+    if( is_string($config)) {
+      echo $config;
+      continue;
+    }
     $btnClass = isset($btnClass) ? $btnClass : 'btn btn-default';
     $config['options']['class'] = $btnClass;
     $config['options']['escape'] = false;
