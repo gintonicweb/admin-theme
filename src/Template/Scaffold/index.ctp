@@ -2,16 +2,8 @@
 
 <div class="<?= $this->CrudView->getCssClasses(); ?>">
     <div class="box box-primary">
-        <?php
-        if (!$this->exists('search')) {
-            $this->start('search');
-                echo $this->element('search');
-            $this->end();
-        }
-        ?>
-        <?= $this->element('action-header', ['tools' => false]) ?>
 
-        <?= $this->fetch('search'); ?>
+        <?= $this->element('action-header', ['tools' => false]) ?>
 
         <?= $this->element('index/bulk_actions/form_start', compact('bulkActions')); ?>
 
