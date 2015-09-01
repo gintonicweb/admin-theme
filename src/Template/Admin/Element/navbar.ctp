@@ -41,7 +41,7 @@
                         <div class="pull-left">
                             <?= $this->Html->link(
                                 'Back to website',
-                                ['controller' => 'Users', 'action' => 'view', 'prefix' => false],
+                                '/',
                                 ['class' => 'btn btn-default btn-flat']
                             ) ?>
                         </div>
