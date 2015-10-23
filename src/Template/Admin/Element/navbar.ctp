@@ -2,8 +2,8 @@
 
 <!-- Logo -->
 <a href="#" class="logo">
-  <?= $this->Html->image('GintonicCMS.g.png',['class'=> 'logo-mini']) ?>
-  <?= $this->Html->image('GintonicCMS.gintonic-white.png',['class'=> 'logo-lg']) ?>
+  <?= $this->Html->image('TwbsTheme.g.png',['class'=> 'logo-mini']) ?>
+  <?= $this->Html->image('TwbsTheme.gintonic-white.png',['class'=> 'logo-lg']) ?>
 </a>
 
 <!-- Header Navbar: style can be found in header.less -->
@@ -18,7 +18,7 @@
             <!-- User Account: style can be found in dropdown.less -->
             <li class="dropdown user user-menu">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                    <img src="/gintonic_c_m_s/img/avatar.jpg" class="user-image" alt="User Image"/>
+                    <?= $this->Html->image('TwbsTheme.avatar.jpg',['class'=> 'user-image']) ?>
                     <span class="hidden-xs">
                         <?= $this->request->session()->read('Auth.User.first') ?>
                         <?= $this->request->session()->read('Auth.User.last') ?>
@@ -27,7 +27,7 @@
                 <ul class="dropdown-menu">
                     <!-- User image -->
                     <li class="user-header">
-                        <img src="/gintonic_c_m_s/img/avatar.jpg" class="img-circle" alt="User Image" />
+                        <?= $this->Html->image('TwbsTheme.avatar.jpg',['class'=> 'img-circle']) ?>
                         <p>
                             <?= $this->request->session()->read('Auth.User.first') ?>
                             <?= $this->request->session()->read('Auth.User.last') ?>

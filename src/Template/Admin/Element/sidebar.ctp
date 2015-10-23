@@ -2,7 +2,7 @@
     <section class="sidebar">
         <div class="user-panel">
             <div class="pull-left image">
-                <img src="/gintonic_c_m_s/img/avatar.jpg" class="img-circle" alt="User Image" />
+                <?= $this->Html->image('TwbsTheme.avatar.jpg',['class'=> 'img-circle']) ?>
             </div>
             <div class="info">
                 <p>

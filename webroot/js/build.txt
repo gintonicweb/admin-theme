@@ -1,4 +1,4 @@
 
-main.js
+config.js
 ----------------
-main.js
+config.js

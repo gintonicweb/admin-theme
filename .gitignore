@@ -1,6 +1,7 @@
 GintonicCMS
 
 /assets/vendor/*
+/assets/tmp/*
 /node_modules/*
 
 CakePHP 3

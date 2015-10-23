@@ -3,30 +3,39 @@ module.exports = function(grunt) {
 
   // Project configuration.
   grunt.initConfig({
+
     // Metadata.
     pkg: grunt.file.readJSON('package.json'),
-    banner: '/*! <%= pkg.title || pkg.name %> - v<%= pkg.version %> - ' +
+    banner: 
+      '/*! <%= pkg.title || pkg.name %> - v<%= pkg.version %> - ' +
       '<%= grunt.template.today("yyyy-mm-dd") %>\n' +
       '<%= pkg.homepage ? "* " + pkg.homepage + "\\n" : "" %>' +
       '* Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author.name %>;' +
       ' Licensed <%= _.pluck(pkg.licenses, "type").join(", ") %> */\n',
+
     // Task configuration.
-    bowerRequirejs: {
-        options: {
-            transitive: true
-        },
-        target: {
-            rjsConfig: 'assets/js/main.js'
-        }
+    babel: {
+      options: {
+        sourceMap: false
+      },
+      dist: {
+        files: [{
+            expand: true,
+            cwd: 'assets/js/',
+            src: ['**/*.*'],
+            dest: 'assets/tmp/',
+            ext: '.js'
+        }]
+      }
     },
     requirejs: {
       compile: {
         options: {
-          appDir:"assets/js",
+          appDir:"assets/tmp/",
           baseUrl:"./",
           dir:"webroot/js",
           modules:[{
-            name: "main",
+            name: "config",
           }],
           noBuildTxt: true
         }
@@ -66,6 +75,10 @@ module.exports = function(grunt) {
           "webroot/css/admin.css": "assets/less/admin.less",
         }
       }
+    },
+    clean: {
+        tmp: ["assets/tmp"],
+        webroot: ["webroot/js/**/*.jsx"],
     },
     concat: {
       options: {
@@ -119,9 +132,17 @@ module.exports = function(grunt) {
         files: '<%= jshint.gruntfile.src %>',
         tasks: ['jshint:gruntfile']
       },
-      lib_test: {
-        files: '<%= jshint.lib_test.src %>',
-        tasks: ['jshint:lib_test', 'qunit']
+      js: {
+        files: [
+            "assets/js/**/*"
+        ],
+        tasks: ["babel","requirejs","copy"]
+      },  
+      style: {
+          files: [
+            "assets/less/**/*",
+          ],
+          tasks: ["less"]
       }
     }
   });
@@ -133,12 +154,11 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-requirejs');
-  grunt.loadNpmTasks('grunt-contrib-requirejs');
-  grunt.loadNpmTasks('grunt-bower-requirejs');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-less');
+  grunt.loadNpmTasks('grunt-babel');
 
   // Default task.
-  grunt.registerTask('default', ['bowerRequirejs','requirejs', 'copy', 'less']);
+  grunt.registerTask('default', ['babel', 'requirejs', 'copy', 'less']);
 
 };
