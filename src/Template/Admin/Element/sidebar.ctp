@@ -19,9 +19,10 @@
 
         <?php
             $this->loadHelper('AdminTheme.Menu');
-            $this->Menu->add('Statistics', 'fa fa-bar-chart');
-            $this->Menu->add('Users', 'fa fa-users', ['index', 'add', 'permissions']);
-            $this->Menu->add('Plans', 'fa fa-users', ['index', 'add']);
+            $this->Menu->add('Users', 'fa fa-users', [
+                'index' => ['controller' => 'users', 'action' => 'index'], 
+                'add' => ['controller' => 'users', 'action' => 'add'], 
+            ]);
             echo $this->Menu->get();
         ?>
 
