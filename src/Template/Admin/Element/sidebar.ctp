@@ -23,6 +23,10 @@
                 'index' => ['controller' => 'users', 'action' => 'index'], 
                 'add' => ['controller' => 'users', 'action' => 'add'], 
             ]);
+            $this->Menu->add('Permissions', 'fa fa-key', [
+                'actions' => ['controller' => 'permissions', 'action' => 'actions'], 
+                'roles' => ['controller' => 'permissions', 'action' => 'roles'], 
+            ]);
             echo $this->Menu->get();
         ?>
 
