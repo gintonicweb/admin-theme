@@ -3,9 +3,17 @@
 namespace AdminTheme\View\Helper;
 
 use Cake\View\Helper;
+use Cake\View\StringTemplateTrait;
 
 class AclHelper extends Helper
 {
+    use StringTemplateTrait;
+
+    protected $_defaultConfig = [
+        'templates' => [
+            'li' => '<li><span class="text-{{status}}">{{alias}}</span> {{defined}}</li>'
+        ]
+    ];
 
     public function actions($acos)
     {
@@ -13,14 +21,16 @@ class AclHelper extends Helper
         foreach ($acos as $aco)
         {
             $status = $aco['allowed']?'success':'danger';
-
-            $output .= '<li>';
-            $output .= '<span class="text-'.$status.'">' . $aco->alias . '</span>';
-
-            if(!$aco['inherited']) {
-                $output .= ' <span class="text-muted small">(defined)</span>';
+            $defined = '';
+            if (!$aco['inherited']) {
+                $defined = '<span class="small text-muted">(defined)</span>';
             }
-            $output .= '</li>';
+
+            $output .= $this->templater()->format('li',[
+                'status' => $status,
+                'alias' => $aco->alias,
+                'defined' => $defined
+            ]);
 
             if (isset($aco['children'])) {
                 $output .= '<ul>';
@@ -30,5 +40,4 @@ class AclHelper extends Helper
         }
         return $output;
     }
-
 }

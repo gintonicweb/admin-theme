@@ -1,3 +1,6 @@
+<?php
+    $this->loadHelper('AdminTheme.Acl');
+?>
 <div class="nav-tabs-custom">
     <ul class="nav nav-tabs">
         <?php foreach($aros as $role) : ?>
