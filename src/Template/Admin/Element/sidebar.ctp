@@ -27,6 +27,10 @@
                 'actions' => ['controller' => 'permissions', 'action' => 'actions'], 
                 'roles' => ['controller' => 'permissions', 'action' => 'roles'], 
             ]);
+            $this->Menu->add('Images', 'fa fa-picture-o', [
+                'index' => ['controller' => 'images', 'action' => 'index'], 
+                'add' => ['controller' => 'images', 'action' => 'add'], 
+            ]);
             echo $this->Menu->get();
         ?>
 

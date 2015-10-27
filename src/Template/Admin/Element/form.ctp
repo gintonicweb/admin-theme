@@ -4,7 +4,7 @@
     <div class="box box-primary">
         <?= $this->element('action-header', ['tools' => false]) ?>
         <div class="box-body">
-            <?= $this->Form->create(${$viewVar}, ['role' => 'form', 'url' => $formUrl, 'data-dirty-check' => $enableDirtyCheck]); ?>
+            <?= $this->Form->create(${$viewVar}, ['role' => 'form', 'url' => $formUrl, 'type' => 'file', 'data-dirty-check' => $enableDirtyCheck]); ?>
             <?= $this->CrudView->redirectUrl(); ?>
             <?= $this->Form->inputs($fields, ['legend' => false]); ?>
         </div>
