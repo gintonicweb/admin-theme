@@ -1,5 +1,4 @@
 require.config({
-    baseUrl: '/',
     paths: {
       "admin": "admin_theme/vendor/admin-lte",
       bootstrap: "admin_theme/vendor/bootstrap/dist/js/bootstrap",
