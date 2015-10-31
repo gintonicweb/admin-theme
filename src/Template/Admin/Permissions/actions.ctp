@@ -1,6 +1,9 @@
 <?php
     $this->loadHelper('AdminTheme.Acl');
+    $this->Require->module('AdminTheme.permissions/tree');
 ?>
+
+
 <div class="nav-tabs-custom">
     <ul class="nav nav-tabs">
         <?php foreach($aros as $role) : ?>
@@ -16,9 +19,8 @@
     </ul>
     <div class="tab-content">
         <table class="table">
-            <?= $this->Acl->actions($acos) ?>
+            <div id="tree" data-aro-alias="<?= $aro->alias?>"></div>
         </table>
     </div>
     <div class="box-footer clearfix"></div>
 </div>
-

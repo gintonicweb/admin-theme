@@ -6,7 +6,9 @@
     "Philippe Lafrance <phil.laf@gmail.com>"
   ],
   "description": "AdminLte theme for GintonicCMS",
-  "main": ["webroot"],
+  "main": [
+    "webroot"
+  ],
   "license": "MIT",
   "ignore": [
     "*",
@@ -20,6 +22,7 @@
     "bootstrap": "*",
     "fontawesome": "*",
     "admin-lte": "~2.1.1",
-    "ionicons": "~2.0.1"
+    "ionicons": "~2.0.1",
+    "react": "~0.14.1"
   }
 }
