@@ -6,7 +6,7 @@ define(function(require) {
         handleClick: function(event) {
             console.log(this.props.aco);
             var state = 'inherit';
-            if (this.props.aco.inherit) {
+            if (this.props.aco.inherited) {
                 state = 'allow';
             } else if (this.props.aco.allowed) {
                 state = 'deny';
