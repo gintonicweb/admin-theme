@@ -10,6 +10,7 @@ define(function(require) {
             $.ajax({
                 url: '/api/permissions/setPermissions.json',
                 dataType: 'json',
+                method: "POST",
                 data: {
                     aro: this.props.aro,
                     aco: aco,
@@ -30,6 +31,7 @@ define(function(require) {
             $.ajax({
                 url: '/api/permissions/actions/user.json',
                 dataType: 'json',
+                method: "POST",
                 success: function(data) {
                     this.setState(data);
                 }.bind(this),
