@@ -2,8 +2,8 @@
 
 namespace AdminTheme\View\Helper;
 
-use Cake\View\StringTemplateTrait;
 use Cake\View\Helper;
+use Cake\View\StringTemplateTrait;
 
 class IconsHelper extends Helper
 {
@@ -17,12 +17,16 @@ class IconsHelper extends Helper
         ]
     ];
 
+    /**
+     * This method replaces a string by an action icon. Mainly used for action
+     * icons
+     */
     public function actions($actions)
     {
         $substitutes = $this->config('substitutes');
 
         foreach ($actions as $name => $config) {
-            if(array_key_exists($name, $substitutes)) {
+            if (array_key_exists($name, $substitutes)) {
                 $actions[$name]['title'] = '<i class="' . $substitutes[$name] . '"></i>';
             }
         }
