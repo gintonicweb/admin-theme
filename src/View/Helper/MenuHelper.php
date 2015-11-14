@@ -18,8 +18,8 @@ class MenuHelper extends Helper
     /**
      * Creates a menu with a single level of submenus
      *
-     * todo: this code is not stable. Should be refactored to get n-level of 
-     * nesting, and parent item should be flexible. Currently, only the 
+     * todo: this code is not stable. Should be refactored to get n-level of
+     * nesting, and parent item should be flexible. Currently, only the
      * controller name is allowed.
      */
     public function add($name, $icon, $actions = [])
