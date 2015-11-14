@@ -25,7 +25,7 @@ class ListRenderer extends KnpListRenderer
     /**
      * The current element has the html class 'active'
      */
-    public function __construct(MatcherInterface $matcher, array $defaultOptions = array(), $charset = null)
+    public function __construct(MatcherInterface $matcher, array $defaultOptions = [], $charset = null)
     {
         $defaultOptions = array_merge([
             'currentClass' => 'active'
