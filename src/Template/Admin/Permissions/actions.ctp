@@ -1,8 +1,4 @@
-<?php
-    $this->loadHelper('AdminTheme.Acl');
-    $this->Require->module('AdminTheme.permissions/tree');
-?>
-
+<?php $this->Require->module('AdminTheme.permissions/tree'); ?>
 
 <div class="nav-tabs-custom">
     <ul class="nav nav-tabs">
