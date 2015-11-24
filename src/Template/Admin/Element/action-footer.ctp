@@ -24,21 +24,15 @@ if (!$this->exists('actions')) {
     <div class="btn-group pull-left">
         <?= $this->fetch('actions'); ?>
     </div>
-    <?php if (isset($showActions) && !$showActions) : ?>
-        <div class="pull-right">
-            <ul class="pagination pagination no-margin">
-                <?php
-                if ($this->Paginator->hasPage(2)) {
-                    echo $this->Paginator->prev('< ');
-                    echo $this->Paginator->numbers([
-                        'prev' => true,
-                        'next' => true,
-                    ]);
-                    echo $this->Paginator->next(' >');
-                }
-                ?>
-            </ul>
-        </div>
-        <p class="text-center"><?= $this->Paginator->counter() ?></p>
-    <?php endif ?>
+    <div class="pull-right">
+        <ul class="pagination pagination no-margin">
+        <?php if ($this->Paginator->hasPage(2)) : ?>
+            <?= $this->Paginator->numbers([
+                'prev' => true,
+                'next' => true,
+            ]) ?>
+        <?php endif ?>
+        </ul>
+    </div>
+    <p class="text-center"><?= $this->Paginator->counter() ?></p>
 </div>
