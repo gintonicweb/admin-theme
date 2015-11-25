@@ -20,8 +20,7 @@
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                     <?= $this->Html->image('TwbsTheme.avatar.jpg',['class'=> 'user-image']) ?>
                     <span class="hidden-xs">
-                        <?= $this->request->session()->read('Auth.User.first') ?>
-                        <?= $this->request->session()->read('Auth.User.last') ?>
+                        <?= $this->request->session()->read('Auth.User.username') ?>
                     </span>
                 </a>
                 <ul class="dropdown-menu">
@@ -29,11 +28,7 @@
                     <li class="user-header">
                         <?= $this->Html->image('TwbsTheme.avatar.jpg',['class'=> 'img-circle']) ?>
                         <p>
-                            <?= $this->request->session()->read('Auth.User.first') ?>
-                            <?= $this->request->session()->read('Auth.User.last') ?>
-                            <small>
-                                <?= $this->request->session()->read('Auth.User.role') ?>
-                            </small>
+                            <?= $this->request->session()->read('Auth.User.username') ?>
                         </p>
                     </li>
                     <!-- Menu Footer-->
