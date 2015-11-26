@@ -18,16 +18,57 @@
         </div>
 
         <?php
-            $this->loadHelper('AdminTheme.Menu');
-            $this->Menu->add('Users', 'fa fa-users', [
-                'index' => ['controller' => 'users', 'action' => 'index'], 
-                'add' => ['controller' => 'users', 'action' => 'add'], 
-            ]);
-            $this->Menu->add('Images', 'fa fa-picture-o', [
-                'index' => ['controller' => 'images', 'action' => 'index'], 
-                'add' => ['controller' => 'images', 'action' => 'add'], 
-            ]);
-            echo $this->Menu->get();
+        $config = [
+            [
+                'ul' => 'sidebar-menu',
+                'li' => 'treeview',
+                'leaf' => false,
+                'template' => '<i class="{{left}}"></i>{{label}}<i class="{{right}} pull-right"></i>'
+            ],
+            [
+                'ul' => 'treeview-menu',
+                'li' => false,
+                'leaf' => false,
+                'template' => '<i class="{{left}}"></i>{{label}}<i class="{{right}} pull-right"></i>',
+            ],
+        ];
+
+        $menu = [
+            'users' => [
+                'children' => [
+                    'index' => [
+                        'url' => [
+                            'controller' => 'users',
+                            'action' => 'index',
+                        ],
+                    ],
+                    'add' => [
+                        'url' => [
+                            'controller' => 'users',
+                            'action' => 'add',
+                        ],
+                    ],
+                ],
+            ],
+            'images' => [
+                'children' => [
+                    'index' => [
+                        'url' => [
+                            'controller' => 'images',
+                            'action' => 'index',
+                        ],
+                    ],
+                    'add' => [
+                        'url' => [
+                            'controller' => 'images',
+                            'action' => 'add',
+                        ],
+                    ],
+                ],
+            ],
+        ];
+        $this->loadHelper('AdminTheme.Menu');
+        echo $this->Menu->create($menu, $config); 
         ?>
 
     </section>
