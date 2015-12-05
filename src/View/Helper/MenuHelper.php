@@ -3,13 +3,13 @@
 namespace AdminTheme\View\Helper;
 
 use Cake\View\Helper;
-use AdminTheme\Menu\Ul;
+use AdminTheme\Menu\MenuGroup;
 
 class MenuHelper extends Helper
 {
-    public function create($menu, $config)
+    public function create($config, $data)
     {
-        $menu = new Ul($menu, $config);
-        return $menu->render();
+        $menu = new MenuGroup($config);
+        return $menu->render($data);
     }
 }

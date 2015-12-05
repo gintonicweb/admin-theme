@@ -19,56 +19,84 @@
 
         <?php
         $config = [
-            [
-                'ul' => 'sidebar-menu',
-                'li' => 'treeview',
-                'leaf' => false,
-                'template' => '<i class="{{left}}"></i>{{label}}<i class="{{right}} pull-right"></i>'
+            [   // level 1
+                'templates' => [
+                    'group' => '<ul class="sidebar-menu">{{group}}</ul>',
+                    'wrapper' => '<li class="treeview">{{wrapper}}</li>',
+                    'content' => '<a href="{{url}}"><i class="{{left}}"></i><span>{{name}}</span><i class="{{right}} pull-right"></i></a>',
+                ],
+                'content' => [
+                    'left' => 'fa fa-angle-right',
+                    'right' => 'fa fa-angle-left',
+                ],
             ],
-            [
-                'ul' => 'treeview-menu',
-                'li' => false,
-                'leaf' => false,
-                'template' => '<i class="{{left}}"></i>{{label}}<i class="{{right}} pull-right"></i>',
+            [   // level 2
+                'templates' => [
+                    'group' => '<ul class="treeview-menu">{{group}}</ul>',
+                    'wrapper' => '<li>{{wrapper}}</li>',
+                ],
+                'content' => [
+                    'left' => 'fa fa-angle-right',
+                    'right' => 'fa fa-angle-left',
+                ],
             ],
         ];
-
         $menu = [
-            'users' => [
-                'children' => [
-                    'index' => [
-                        'url' => [
-                            'controller' => 'users',
-                            'action' => 'index',
+            [
+                'content' => [
+                    'left' => 'fa fa-users',
+                    'name' => 'users',
+                ],
+                'group' => [
+                    [
+                        'content' => [
+                            'name' => 'index',
+                            'url' => [
+                                'controller' => 'users',
+                                'action' => 'index',
+                            ],
                         ],
                     ],
-                    'add' => [
-                        'url' => [
-                            'controller' => 'users',
-                            'action' => 'add',
+                    [
+                        'content' => [
+                            'name' => 'add',
+                            'url' => [
+                                'controller' => 'users',
+                                'action' => 'add',
+                            ],
                         ],
                     ],
                 ],
             ],
-            'images' => [
-                'children' => [
-                    'index' => [
-                        'url' => [
-                            'controller' => 'images',
-                            'action' => 'index',
-                        ],
+            [
+                'content' => [
+                    'left' => 'fa fa-image',
+                    'name' => 'images',
+                ],
+                'group' => [
+                    [
+                        'content' => [
+                            'name' => 'index',
+                            'url' => [
+                                'controller' => 'images',
+                                'action' => 'index',
+                            ],
+                        ]
                     ],
-                    'add' => [
-                        'url' => [
-                            'controller' => 'images',
-                            'action' => 'add',
-                        ],
+                    [
+                        'content' => [
+                            'name' => 'add',
+                            'url' => [
+                                'controller' => 'images',
+                                'action' => 'add',
+                            ],
+                        ]
                     ],
                 ],
             ],
         ];
         $this->loadHelper('AdminTheme.Menu');
-        echo $this->Menu->create($menu, $config); 
+        echo $this->Menu->create($config, $menu); 
         ?>
 
     </section>
