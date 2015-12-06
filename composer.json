@@ -21,7 +21,8 @@
     },
     "require": {
         "php": ">=5.4",
-        "cakephp/cakephp": "~3.0"
+        "cakephp/cakephp": "~3.0",
+        "gintonicweb/menus": "dev-master"
     },
     "require-dev": {
         "phpunit/phpunit": "*",
