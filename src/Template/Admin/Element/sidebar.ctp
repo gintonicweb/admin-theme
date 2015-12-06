@@ -21,10 +21,12 @@
         $config = [
             [   // level 1
                 'templates' => [
-                    'group' => '<ul class="sidebar-menu">{{group}}</ul>',
-                    'wrapper' => '<li class="treeview">{{wrapper}}</li>',
+                    'group' => '<ul class="{{class}}">{{group}}</ul>',
+                    'wrapper' => '<li class="{{class}}">{{wrapper}}</li>',
                     'content' => '<a href="{{url}}"><i class="{{left}}"></i><span>{{name}}</span><i class="{{right}} pull-right"></i></a>',
                 ],
+                'group' => ['class' => 'sidebar-menu'],
+                'wrapper' => ['class' => 'treeview'],
                 'content' => [
                     'left' => 'fa fa-angle-right',
                     'right' => 'fa fa-angle-left',
@@ -33,63 +35,45 @@
             [   // level 2
                 'templates' => [
                     'group' => '<ul class="treeview-menu">{{group}}</ul>',
-                    'wrapper' => '<li>{{wrapper}}</li>',
+                    'wrapper' => '<li class="{{class}}">{{wrapper}}</li>',
                 ],
                 'content' => [
                     'left' => 'fa fa-angle-right',
-                    'right' => 'fa fa-angle-left',
+                    'right' => '',
                 ],
             ],
         ];
         $menu = [
             [
-                'content' => [
-                    'left' => 'fa fa-users',
-                    'name' => 'users',
-                ],
+                'content' => ['left' => 'fa fa-users', 'name' => 'users'],
                 'group' => [
                     [
                         'content' => [
                             'name' => 'index',
-                            'url' => [
-                                'controller' => 'users',
-                                'action' => 'index',
-                            ],
+                            'url' => ['controller' => 'users', 'action' => 'index'],
                         ],
                     ],
                     [
                         'content' => [
                             'name' => 'add',
-                            'url' => [
-                                'controller' => 'users',
-                                'action' => 'add',
-                            ],
+                            'url' => ['controller' => 'users', 'action' => 'add'],
                         ],
                     ],
                 ],
             ],
             [
-                'content' => [
-                    'left' => 'fa fa-image',
-                    'name' => 'images',
-                ],
+                'content' => ['left' => 'fa fa-image', 'name' => 'images'],
                 'group' => [
                     [
                         'content' => [
                             'name' => 'index',
-                            'url' => [
-                                'controller' => 'images',
-                                'action' => 'index',
-                            ],
+                            'url' => ['controller' => 'images', 'action' => 'index'],
                         ]
                     ],
                     [
                         'content' => [
                             'name' => 'add',
-                            'url' => [
-                                'controller' => 'images',
-                                'action' => 'add',
-                            ],
+                            'url' => ['controller' => 'images', 'action' => 'add'],
                         ]
                     ],
                 ],

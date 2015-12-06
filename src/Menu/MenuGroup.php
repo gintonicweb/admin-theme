@@ -13,16 +13,20 @@ class MenuGroup
 
     protected $_defaultConfig = [
         'templates' => [
-            'group' => '<ul class="{{class}}">{{group}}</ul>',
+            'group' => '<ul>{{group}}</ul>',
         ],
         'group' => [
-            'class' => '',
             'group' => 'empty group',
         ],
     ];
 
-    public function __construct(array $config = [])
+    protected $_here = null;
+
+    protected $_active = false;
+
+    public function __construct(array $config = [], $here)
     {
+        $this->_here = $here;
         $this->config(array_shift($config));
 
         if (!empty($config)) {
@@ -35,11 +39,17 @@ class MenuGroup
         $wrappers = '';
 
         foreach ($items as $item) {
-            $wrapper = new MenuWrapper($this->config());
+            $wrapper = new MenuWrapper($this->config(), $this->_here);
             $wrappers .= $wrapper->render($item);
+            $this->_active = $this->_active || $wrapper->active();
         }
 
         $this->config('group.group', $wrappers);
         return $this->formatTemplate('group', $this->config('group'));
+    }
+
+    public function active()
+    {
+        return $this->_active;
     }
 }

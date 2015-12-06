@@ -9,7 +9,8 @@ class MenuHelper extends Helper
 {
     public function create($config, $data)
     {
-        $menu = new MenuGroup($config);
+        $here = $this->_View->request->here();
+        $menu = new MenuGroup($config, $here);
         return $menu->render($data);
     }
 }

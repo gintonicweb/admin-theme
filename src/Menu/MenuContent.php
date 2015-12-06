@@ -4,6 +4,7 @@ namespace AdminTheme\Menu;
 
 use AdminTheme\Menu\MenuGroup;
 use Cake\Core\InstanceConfigTrait;
+use Cake\Network\Request;
 use Cake\Routing\Router;
 use Cake\View\StringTemplateTrait;
 
@@ -22,9 +23,18 @@ class MenuContent
         ],
     ];
 
-    public function __construct(array $config = [])
+    protected $_here = null;
+
+    protected $_active = false;
+
+    public function __construct(array $config = [], $here)
     {
+        $this->_here = $here;
         $this->config($config);
+
+        if ($here === Router::url($this->config('content.url'))) {
+            $this->_active = true;
+        }
     }
 
     public function render($group = null)
@@ -34,10 +44,16 @@ class MenuContent
 
         if ($group) {
             $this->config(array_shift($this->_config['childConfig']));
-            $menu = new MenuGroup([$this->config()]);
+            $menu = new MenuGroup([$this->config()], $this->_here);
             $content .= $menu->render($group);
+            $this->_active = $this->_active || $menu->active();
         }
 
         return $content;
+    }
+
+    public function active()
+    {
+        return $this->_active;
     }
 }
