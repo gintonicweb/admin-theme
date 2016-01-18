@@ -60,7 +60,7 @@
                 ],
             ],
         ];
-        $this->loadHelper('Menu.Menu');
+        $this->loadHelper('Menus.Menu');
         echo $this->Menu->create($config, $menu); 
         ?>
 
