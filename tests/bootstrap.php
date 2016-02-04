@@ -107,9 +107,6 @@ Log::config([
     ]
 ]);
 
-Carbon\Carbon::setTestNow(Carbon\Carbon::now());
-ini_set('intl.default_locale', 'en_US');
-
 Router::reload();
 Cake\Routing\DispatcherFactory::add('Routing');
 Cake\Routing\DispatcherFactory::add('ControllerFactory');

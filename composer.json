@@ -20,13 +20,11 @@
         "source": "https://github.com/gintonicweb/admin-theme"
     },
     "require": {
-        "php": ">=5.4",
         "cakephp/cakephp": "~3.0",
         "gintonicweb/menus": "dev-master"
     },
     "require-dev": {
-        "phpunit/phpunit": "*",
-        "cakephp/cakephp-codesniffer": "2.*"
+        "phpunit/phpunit": "*"
     },
     "autoload": {
         "psr-4": {
@@ -35,7 +33,6 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Cake\\Test\\": "./vendor/cakephp/cakephp/tests",
             "AdminTheme\\Test\\": "tests"
         }
     }
