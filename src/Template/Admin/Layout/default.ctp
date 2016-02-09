@@ -37,6 +37,6 @@
     <?= $this->Require->module('admin/plugins/fastclick/fastclick'); ?>
     <?= $this->Require->module('jquery'); ?>
     <?= $this->Require->module('bootstrap'); ?>
-    <?= $this->Require->load('Requirejs.require', 'AdminTheme.config', ['AdminTheme.base']); ?>
+    <?= $this->Require->load(['AdminTheme.config']); ?>
   </body>
 </html>
