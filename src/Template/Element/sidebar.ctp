@@ -2,7 +2,7 @@
     <section class="sidebar">
         <div class="user-panel">
             <div class="pull-left image">
-                <?= $this->Html->image('TwbsTheme.avatar.jpg',['class'=> 'img-circle']) ?>
+                <?= $this->Html->image('AdminTheme.avatar.jpg', ['class' => 'img-circle']) ?>
             </div>
             <div class="info">
                 <p>
@@ -10,7 +10,7 @@
                 </p>
                 <?= $this->Html->link(
                     '<i class="fa fa-angle-left"></i> Back to website',
-                    ['controller'=>'users', 'action' => 'view', 'prefix' => false],
+                    ['controller' => 'users', 'action' => 'view', 'prefix' => false],
                     ['escape' => false]
                 ) ?>
             </div>
@@ -18,7 +18,7 @@
 
         <?php
         $config = [
-            [   // level 1
+            [ // level 1
                 'templates' => [
                     'group' => '<ul class="sidebar-menu">{{group}}</ul>',
                     'wrapper' => '<li class="{{class}}">{{wrapper}}</li>',
@@ -30,7 +30,7 @@
                     'right' => 'fa fa-angle-left',
                 ],
             ],
-            [   // level 2
+            [ // level 2
                 'templates' => [
                     'group' => '<ul class="treeview-menu">{{group}}</ul>',
                     'wrapper' => '<li class="{{class}}">{{wrapper}}</li>',
@@ -61,7 +61,7 @@
             ],
         ];
         $this->loadHelper('Menus.Menu');
-        echo $this->Menu->create($config, $menu); 
+        echo $this->Menu->create($config, $menu);
         ?>
 
     </section>
