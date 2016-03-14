@@ -36,7 +36,7 @@
                             <?= $this->element('index/table_columns', compact('singularVar')); ?>
             
                             <?php if ($actionsExist): ?>
-                                <td class="actions pull-right nowrap"><?= $this->element('actions', [
+                                <td class="actions pull-right text-nowrap"><?= $this->element('actions', [
                                     'singularVar' => $singularVar,
                                     'actions' => $actions['entity'],
                                     'iconify' => true
