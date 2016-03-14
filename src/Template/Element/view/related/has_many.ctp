@@ -50,7 +50,7 @@ foreach ($relations as $alias => $details):
                                     <?php
                                 }
                                 ?>
-                                <td class="actions pull-right">
+                                <td class="actions pull-right nowrap">
                                     <?= $this->Html->link(
                                         __d('crud', '<i class="fa fa-eye"></i>'), 
                                         [
