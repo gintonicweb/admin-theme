@@ -1,6 +1,5 @@
 require.config({
     paths: {
-        permissions: 'admin_theme/js/permissions',
         "admin": "admin_theme/vendor/admin-lte",
         bootstrap: "admin_theme/vendor/bootstrap/dist/js/bootstrap",
         fontawesome: "admin_theme/vendor/fontawesome/fonts/*",
@@ -8,7 +7,8 @@ require.config({
         jquery: "admin_theme/vendor/jquery/dist/jquery",
         react: 'admin_theme/vendor/react/react',
         reactdom: 'admin_theme/vendor/react/react-dom',
-        datetimepicker: 'admin_theme/vendor/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min'
+        datetimepicker: 'admin_theme/vendor/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min',
+        moment: 'admin_theme/vendor/moment/min/moment.min'
     },
     shim: {
         bootstrap: [
@@ -34,6 +34,11 @@ require.config({
         "admin/dist/js/demo": [
             "jquery",
             "bootstrap"
+        ],
+        datetimepicker: [
+            "jquery",
+            "bootstrap",
+            "moment",
         ]
     },
     packages: [
