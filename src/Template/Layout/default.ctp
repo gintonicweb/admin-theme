@@ -37,6 +37,7 @@
     <?= $this->Require->module('admin/plugins/fastclick/fastclick'); ?>
     <?= $this->Require->module('jquery'); ?>
     <?= $this->Require->module('bootstrap'); ?>
+    <?= $this->Require->module('datetimepicker'); ?>
     <?= $this->Require->load(['AdminTheme.config']); ?>
   </body>
 </html>

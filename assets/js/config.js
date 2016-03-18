@@ -8,6 +8,7 @@ require.config({
         jquery: "admin_theme/vendor/jquery/dist/jquery",
         react: 'admin_theme/vendor/react/react',
         reactdom: 'admin_theme/vendor/react/react-dom',
+        datetimepicker: 'admin_theme/vendor/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min'
     },
     shim: {
         bootstrap: [
