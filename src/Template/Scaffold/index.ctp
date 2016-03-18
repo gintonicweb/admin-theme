@@ -1,4 +1,5 @@
 <?= $this->fetch('before_index') ?>
+<?= $this->element('search') ?>
 
 <div class="<?= $this->CrudView->getCssClasses(); ?>">
     <div class="box box-primary">
