@@ -7,12 +7,15 @@ define(function(require) {
     var $form = $input.closest('form');
     var searchField = $input.data('selectize');
     var url = $input.data('url');
+    var maxItems = $input.data('max-items');
+    var maxOptions = $input.data('max-options');
 
     $input.selectize({
-        valueField: searchField,
+        valueField: 'id',
         labelField: searchField,
         searchField: [searchField],
-        maxOptions: 10,
+        maxItems: maxItems,
+        maxOptions: maxOptions,
         options: [],
         create: false,
         render: {
@@ -32,7 +35,10 @@ define(function(require) {
                     callback();
                 },
                 success: function(res) {
-                    callback(res.data);
+                    var results = $.map(res.data, function (name, id) {
+                        return {value: id, text: name};
+                    })
+                    callback(results);
                 }
             });
         },
