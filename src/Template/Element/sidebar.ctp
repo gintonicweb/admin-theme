@@ -10,7 +10,13 @@
                 </p>
                 <?= $this->Html->link(
                     '<i class="fa fa-angle-left"></i> Back to website',
-                    ['controller' => 'users', 'action' => 'view', 'prefix' => false],
+                    [
+                        'controller' => 'pages',
+                        'action' => 'display',
+                        'prefix' => false,
+                        'plugin' => false,
+                        'home'
+                    ],
                     ['escape' => false]
                 ) ?>
             </div>

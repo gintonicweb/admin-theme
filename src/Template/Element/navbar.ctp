@@ -43,7 +43,12 @@
                             <div class="pull-right">
                                 <?= $this->Html->link(
                                     'Signout',
-                                    ['controller' => 'Users', 'action' => 'signout', 'prefix' => false],
+                                    [
+                                        'controller' => 'Users',
+                                        'action' => 'signout',
+                                        'prefix' => false,
+                                        'plugin' => false
+                                    ],
                                     ['class' => 'btn btn-default btn-flat']
                                 ) ?>
                             </div>
