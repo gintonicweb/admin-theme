@@ -8,7 +8,10 @@ require.config({
         react: 'admin_theme/vendor/react/react',
         reactdom: 'admin_theme/vendor/react/react-dom',
         datetimepicker: 'admin_theme/vendor/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min',
-        moment: 'admin_theme/vendor/moment/min/moment.min'
+        moment: 'admin_theme/vendor/moment/min/moment.min',
+        selectize: 'admin_theme/vendor/selectize/dist/js/selectize',
+        sifter: 'admin_theme/vendor/sifter/sifter',
+        microplugin: 'admin_theme/vendor/microplugin/src/microplugin'
     },
     shim: {
         bootstrap: [
@@ -39,6 +42,10 @@ require.config({
             "jquery",
             "bootstrap",
             "moment",
+        ],
+        selectize: [
+            "sifter",
+            "microplugin",
         ]
     },
     packages: [
