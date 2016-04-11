@@ -18,7 +18,8 @@ require.config({
             "jquery"
         ],
         "admin/dist/js/app": [
-            "jquery"
+            "jquery",
+            "bootstrap"
         ],
         "admin/plugins/jvectormap/jquery-jvectormap-1.2.2.min": [
             "jquery"
