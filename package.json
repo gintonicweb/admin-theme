@@ -25,5 +25,9 @@
     "grunt-contrib-clean": "~0.6.0"
   },
   "dependencies": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/gintonicweb/repository.git"
   }
 }
