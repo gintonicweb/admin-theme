@@ -1,4 +1,2 @@
 # AdminLTE
-AdminLTE theme for GintonicCMS
-
-Early stub.
+This package is not maintained
